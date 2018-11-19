@@ -12,7 +12,6 @@
   const dataModal = document.querySelectorAll('[data-modal]');
   const modalLinks = document.querySelectorAll('.modal-link');
   const buttons = document.querySelector('.buttons');
-  // console.log(buttons);
 
   function makeStyle(hide, modalElem, bagrElem) {
     if (hide === true) {
