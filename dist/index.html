@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/main.css" />
     <title>Document</title>
   </head>
   <body>
     <div class="buttons">
-      <button href="#" class="modal-link" data-link="uninstall">popup</button>
+      <button id="link1" href="#" class="modal-link" data-link="uninstall">popup</button>
       <button href="#" class="modal-link" data-link="install">popup2</button>
     </div>
     <div class="modal hide" data-contant="uninstall">
-      <img class="modal__image" src="images/icon-warning_notify-red.svg" alt=""/>
+      <img class="modal__image1" src="images/icon-warning_notify-red.svg" alt=""/>
       <p class="modal__message">Are you sure you want to uinstall the Shasam app</p>
       <div class="modal__buttons">
         <button class="btn" data-modal="close">Cancel</button>
@@ -29,6 +30,7 @@
         <button class="btn install" data-modal="alert">install</button>
       </div>     
     </div>
-    <script src="js/script.js"></script>
+    <script src="js/jquery.script.js"></script>
+    <script src="js/script1.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-(function () {
+(function modal() {
   const overlay = document.createElement('div');
   overlay.classList.add('back-color', 'hide');
   document.body.appendChild(overlay);
@@ -12,8 +12,9 @@
   const dataModal = document.querySelectorAll('[data-modal]');
   const modalLinks = document.querySelectorAll('.modal-link');
   const buttons = document.querySelector('.buttons');
+  let currentWindow = '';
 
-  function makeStyle(hide, modalElem, bagrElem) {
+  const makeStyle = function setStyles(hide, modalElem, bagrElem) {
     if (hide === true) {
       modalElem.classList.add('hide');
       bagrElem.classList.add('hide');
@@ -23,7 +24,7 @@
       bagrElem.classList.remove('hide');
       buttons.classList.add('hide');
     }
-  }
+  };
 
   modalLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
@@ -40,10 +41,16 @@
     }
   });
 
+  const closeModal = function closeM(event) {
+    makeStyle(true, currentWindow, overlay);
+    if (event.target.dataset.modal === 'alert') {
+      setTimeout("alert('Some mesage')", 100);
+    } else {
+      console.log();
+    }
+  };
+
   for (let i = 0; i < dataModal.length; i += 1) {
-    dataModal[i].addEventListener('click', (event) => {
-      makeStyle(true, currentWindow, overlay);
-      event.target.dataset.modal === 'alert' ? setTimeout("alert('Some mesage')", 100) : console.log();
-    });
+    dataModal[i].addEventListener('click', closeModal);
   }
 }());
